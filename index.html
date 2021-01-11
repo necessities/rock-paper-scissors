@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+<!-- <center>  -->
+---------------------------------------------
+
+<p> Rock Paper Scissors </p>
+<button onclick="myFunction()">Click me</button>
+<p id="demo"></p>
+
+<button id="rock" onclick="chooseRock()">Rock</button>
+<button onclick="choosePaper()">Paper</button>
+<p id="paper"></p>
+<button id="scissors" onclick="chooseScissors()">Scissors</button>
+
+</br>
+
+<script>
+function myFunction() {
+  //let text1="Rock Paper Scissors";
+  let text2="Coming soon!";
+  //let text3 = text1 + text2;
+  let text3 = text2;
+  document.getElementById('demo').innerHTML = text3;
+
+}
+//-----------------------computer turn-----------------------------
+// function for generating computer input
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+// create variable for computer choice
+
+let computerChoice = "change";
+
+// create function for computer turn
+
+function getComputerChoice() {
+  computerChoice = (getRandomInt(3));
+    //console.log `${computerChoice}`; : Test output to see if function works
+  }
+
+//--------------------------------computer turn end------------------
+
+function chooseRock() {
+  getComputerChoice();
+  console.log("You Chose Rock");
+  if (computerChoice == 0) {
+    computerChoice = 'rock';
+  } else if (computerChoice == 1) {
+    computerChoice = 'paper'
+  } else if (computerChoice == 2) {
+    computerChoice = 'scissors'
+  }
+}
+
+function choosePaper() {
+  getComputerChoice();
+  console.log("You Chose Paper");
+  if (computerChoice == 0) {
+    computerChoice = 'rock';
+  console.log("Computer Chose Rock");
+  document.getElementById("paper").innerHTML = 6 + 6;
+  
+  } else if (computerChoice == 1) {
+    computerChoice = 'paper'
+  console.log("Computer Chose Paper");
+  } else if (computerChoice == 2) {
+    computerChoice = 'scissors'
+  console.log("Computer Chose Scissors");
+  }
+}
+
+function chooseScissors() {
+  getComputerChoice();
+  console.log("You Chose Scissors");
+  if (computerChoice == 0) {
+    computerChoice = 'rock';
+  } else if (computerChoice == 1) {
+    computerChoice = 'paper'
+  } else if (computerChoice == 2) {
+    computerChoice = 'scissors'
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+-------------------------------------------------
+<!--  </center>  -->
+
+</body>
+</html>
