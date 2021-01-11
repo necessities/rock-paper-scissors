@@ -1,68 +1,85 @@
-
-
-
-
-
+//-----------------------computer turn-----------------------------
 // function for generating computer input
+
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
-
-//prompt for user input
-
-let choice = prompt('Rock Paper or Scissors?', );
-
-//declare variable to hold computer input
+// create variable for computer choice
 
 let computerChoice = "change";
 
-//convert computer input into either rock,paper,scissors
+// create function for computer turn
 
 function getComputerChoice() {
   computerChoice = (getRandomInt(3));
-  //console.log `${computerChoice}`; : Test output to see if function works
-}
+    //console.log `${computerChoice}`; : Test output to see if function works
+  }
+
+//--------------------------------computer turn end------------------
+
+let compSc = 0;
+let playSc = 0;
+
+function chooseRock() {
   getComputerChoice();
-
-// alert(computerChoice); : Test output to see if function works with this
-
-if (computerChoice == 0) {
-  computerChoice = 'rock';
-} else if (computerChoice == 1) {
-  computerChoice = 'paper'
-} else if (computerChoice == 2) {
-  computerChoice = 'scissors'
+  console.log("You Chose Rock");
+  if (computerChoice == 0) {
+    computerChoice = 'Rock';
+    document.getElementById("result").innerHTML = `Computer chose ${computerChoice} | It's a Tie!`;
+    document.getElementById("score").innerHTML = `Computer Score = ${compSc} Player Score = ${playSc}`;
+  } else if (computerChoice == 1) {
+    computerChoice = 'Paper';
+    compSc++;
+    document.getElementById("result").innerHTML = `Computer chose ${computerChoice} | Computer Wins! Computer +1`;
+    document.getElementById("score").innerHTML = `Computer Score = ${compSc} Player Score = ${playSc}`;
+  } else if (computerChoice == 2) {
+    computerChoice = 'Scissors';
+    playSc++;
+    document.getElementById("result").innerHTML = `Computer chose ${computerChoice} | Player Wins! Player +1`;
+    document.getElementById("score").innerHTML = `Computer Score = ${compSc} Player Score = ${playSc}`;
+  }
 }
 
-alert(`Computer chooses ${computerChoice}`);
+function choosePaper() {
+  getComputerChoice();
+  console.log("You Chose Paper");
+  if (computerChoice == 0) {
+    computerChoice = 'Rock';
+    playSc++;
+    console.log("Computer Chose Rock");
+    document.getElementById("result").innerHTML = `Computer chose ${computerChoice} | Player Wins! Player +1`;
+    document.getElementById("score").innerHTML = `Computer Score = ${compSc} Player Score = ${playSc}`;
+  } else if (computerChoice == 1) {
+    computerChoice = 'Paper';
+    console.log("Computer Chose Paper");
+    document.getElementById("result").innerHTML = `Computer chose ${computerChoice} | It's a Tie!`;
+    document.getElementById("score").innerHTML = `Computer Score = ${compSc} Player Score = ${playSc}`;
+  } else if (computerChoice == 2) {
+    computerChoice = 'Scissors';
+    console.log("Computer Chose Scissors");
+    compSc++;
+    document.getElementById("result").innerHTML = `Computer chose ${computerChoice} | Computer Wins! Computer +1`;
+    document.getElementById("score").innerHTML = `Computer Score = ${compSc} Player Score = ${playSc}`;
+    console.log(`Computer Score = ${compSc} Player Score = ${playSc}`);
+  }
+}
 
-//take user input and check it against computer input
-
-if (choice == 'rock') {
-  if(choice == 'rock' && computerChoice == 'rock'){
-  alert("Tie!");
-  } else if (choice == 'rock' && computerChoice == 'paper') {
-  alert("Computer wins!");
-  } else if (choice == 'rock'&& computerChoice == 'scissors') {
-  alert("You win!");}
-
-} else if (choice == 'paper') {
-  if(choice == 'paper' && computerChoice == 'paper'){
-  alert("Tie!");
-  } else if (choice == 'paper' && computerChoice == 'scissors') {
-  alert("Computer wins!");
-  } else if (choice == 'paper'&& computerChoice == 'rock') {
-  alert("You win!");}
-
-} else if (choice == 'scissors') {
-  if(choice == 'scissors' && computerChoice == 'scissors'){
-  alert("Tie!");
-  } else if (choice == 'scissors' && computerChoice == 'rock') {
-  alert("Computer wins!");
-} else if (choice == 'scissors'&& computerChoice == 'paper') {
-  alert("You win!");}
-
-
-} else {
-  alert("Please Choose rock paper or scissors")
+function chooseScissors() {
+  getComputerChoice();
+  console.log("You Chose Scissors");
+  if (computerChoice == 0) {
+    computerChoice = 'Rock';
+    compSc++;
+    document.getElementById("result").innerHTML = `Computer chose ${computerChoice} | Computer Wins! Computer +1`;
+    document.getElementById("score").innerHTML = `Computer Score = ${compSc} Player Score = ${playSc}`;
+  } else if (computerChoice == 1) {
+    computerChoice = 'Paper'
+    playSc++;
+    document.getElementById("result").innerHTML = `Computer chose ${computerChoice} | Player Wins! Player +1`;
+    document.getElementById("score").innerHTML = `Computer Score = ${compSc} Player Score = ${playSc}`;
+  } else if (computerChoice == 2) {
+    computerChoice = 'Scissors'
+    document.getElementById("result").innerHTML = `Computer chose ${computerChoice} | It's a Tie!`;
+    document.getElementById("score").innerHTML = `Computer Score = ${compSc} Player Score = ${playSc}`;
+  }
 }
